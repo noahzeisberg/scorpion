@@ -1,3 +1,7 @@
-build/bin
-node_modules
-frontend/dist
+/build/bin
+/frontend/node_modules
+/node_modules
+/frontend/dist
+/build/darwin/
+/build/windows/
+/build/
