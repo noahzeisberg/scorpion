@@ -1,5 +1,5 @@
 <template>
-  <a v-if="type === 'browser'" @click="BrowserOpenURL(target)" href="#" class="flex px-6 py-3 rounded-lg items-center gap-3 duration-300 ease-in-out hover:bg-primary-100 hover:text-primary-600 hover:shadow-none hover:cursor-pointer bg-secondary-100 shadow-sm">
+  <a v-if="type === 'browser'" @click="BrowserOpenURL(target)" href="#" class="flex px-6 py-3 rounded-lg items-center gap-3 duration-300 ease-in-out hover:bg-primary-100 hover:text-primary-600 hover:shadow-none hover:cursor-pointer bg-secondary-100 shadow-sm ring-1 ring-inset ring-secondary-200 hover:ring-transparent">
     <slot></slot>
     <div class="flex flex-col">
       <h1 class="font-black">{{ heading }}</h1>
@@ -7,7 +7,7 @@
     </div>
   </a>
 
-  <RouterLink v-if="type === 'router'" :to="target" class="flex px-6 py-3 rounded-lg items-center gap-3 duration-300 ease-in-out hover:bg-primary-100 hover:text-primary-600 hover:shadow-none hover:cursor-pointer bg-secondary-100 shadow-sm">
+  <RouterLink v-if="type === 'router'" :to="target" class="flex px-6 py-3 rounded-lg items-center gap-3 duration-300 ease-in-out hover:bg-primary-100 hover:text-primary-600 hover:shadow-none hover:cursor-pointer bg-secondary-100 shadow-sm ring-1 ring-inset ring-secondary-200 hover:ring-transparent">
     <slot></slot>
     <div class="flex flex-col">
       <h1 class="font-black">{{ heading }}</h1>

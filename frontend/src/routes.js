@@ -2,6 +2,7 @@ import Home from "./components/pages/Home.vue";
 import Search from "./components/pages/Search.vue";
 import {createRouter, createWebHashHistory} from "vue-router";
 import Download from "./components/pages/Download.vue";
+import Settings from "./components/pages/Settings.vue";
 
 export default new createRouter({
     history: createWebHashHistory(),
@@ -11,7 +12,7 @@ export default new createRouter({
         { path: "/search/:query", component: Search },
         { path: "/packages", component: Search },
         { path: "/download", component: Download },
-        { path: "/settings", component: Search },
+        { path: "/settings", component: Settings },
     ],
     linkActiveClass: "router-link-active",
     linkExactActiveClass: "router-link-exact-active",

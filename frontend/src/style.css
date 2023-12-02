@@ -13,20 +13,11 @@
 main.layout {
     display: grid;
     grid-template-areas:
-        "nav header"
         "side content";
-    grid-template-rows: 65px calc(100vh - 65px);
+    grid-template-rows: 100vh;
     grid-template-columns: max-content auto;
 
     @apply w-screen h-screen
-}
-
-nav.layout {
-    grid-area: nav;
-}
-
-header.layout {
-    grid-area: header;
 }
 
 aside.layout {
@@ -35,15 +26,14 @@ aside.layout {
 
 section.layout {
     grid-area: content;
-    height: calc(100vh - 65px);
 }
 
 .router-link-active {
-    @apply bg-primary-100 text-primary-600
+    @apply bg-primary-100/25 text-primary-600
 }
 
 ::selection {
-    @apply text-primary-600 bg-primary-100
+    @apply bg-primary-100/25 text-primary-600
 }
 
 ::-webkit-scrollbar {

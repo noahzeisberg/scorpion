@@ -1,5 +1,5 @@
 <template>
-  <section class="m-12 flex flex-col gap-1">
+  <section class="mx-12 my-6 flex flex-col items-start gap-1.5">
     <slot></slot>
   </section>
 </template>

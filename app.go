@@ -2,7 +2,9 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
+	"github.com/NoahOnFyre/gengine/filesystem"
 	"github.com/google/go-github/github"
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 	"io"
@@ -14,6 +16,7 @@ import (
 )
 
 var (
+	settings     ScorpionSettings
 	userDir, _   = os.UserHomeDir()
 	scorpionDir  = userDir + "\\.scorpion\\"
 	downloadDir  = scorpionDir + "downloads\\"
@@ -30,6 +33,11 @@ type App struct {
 	ctx context.Context
 }
 
+type ScorpionSettings struct {
+	Transparency bool `json:"transparency"`
+	DisplayCards bool `json:"display_cards"`
+}
+
 // NewApp creates a new App application struct
 func NewApp() *App {
 	return &App{}
@@ -39,6 +47,38 @@ func NewApp() *App {
 // so we can call the runtime methods
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
+	for _, path := range []string{
+		scorpionDir,
+		packageDir,
+		downloadDir,
+		tempDir,
+	} {
+		if !filesystem.Exists(path) {
+			os.MkdirAll(path, os.ModePerm)
+		}
+	}
+
+	settings = ScorpionSettings{}
+	preferenceString, err := os.ReadFile(scorpionDir + "settings.json")
+	if err != nil {
+		return
+	}
+	err = json.Unmarshal(preferenceString, &settings)
+	if err != nil {
+		return
+	}
+}
+
+func (a *App) GetSettings() ScorpionSettings {
+	return settings
+}
+
+func (a *App) UpdateSettings(settings ScorpionSettings) {
+	data, err := json.Marshal(settings)
+	if err != nil {
+		return
+	}
+	os.WriteFile(scorpionDir+"settings.json", data, os.ModePerm)
 }
 
 // Greet returns a greeting for the given name
