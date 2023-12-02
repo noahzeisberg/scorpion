@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=beVietnam-pro@2,1&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,5 +7,45 @@
 @tailwind variants;
 
 * {
-    font-family: "Inter", sans-serif;
+    font-family: "Satoshi", sans-serif;
+}
+
+main.layout {
+    display: grid;
+    grid-template-areas:
+        "nav header"
+        "side content";
+    grid-template-rows: 65px calc(100vh - 65px);
+    grid-template-columns: max-content auto;
+
+    @apply w-screen h-screen
+}
+
+nav.layout {
+    grid-area: nav;
+}
+
+header.layout {
+    grid-area: header;
+}
+
+aside.layout {
+    grid-area: side;
+}
+
+section.layout {
+    grid-area: content;
+    height: calc(100vh - 65px);
+}
+
+.router-link-active {
+    @apply bg-primary-100 text-primary-600
+}
+
+::selection {
+    @apply text-primary-600 bg-primary-100
+}
+
+::-webkit-scrollbar {
+    @apply hidden
 }

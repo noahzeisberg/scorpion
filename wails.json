@@ -9,5 +9,11 @@
   "author": {
     "name": "NoahOnFyre",
     "email": "noahonfyre@gmail.com"
+  },
+  "info": {
+    "productName": "Scorpion",
+    "companyName": "Nyronium Group",
+    "productVersion": "0.1.0",
+    "copyright": "NGPL (Nyronium General Publishing License)"
   }
 }
