@@ -80,7 +80,7 @@
 
     <section class="layout flex flex-col bg-secondary-50">
       <div class="w-full h-0.5">
-        <div :style="{ width: `${progress}%` }" class="h-full bg-primary-600 rounded-full ease-in-out duration-300"></div>
+        <div :style="{ width: `${progress}%` }" class="h-full bg-primary-600 ease-in-out duration-300"></div>
       </div>
       <RouterView></RouterView>
     </section>
