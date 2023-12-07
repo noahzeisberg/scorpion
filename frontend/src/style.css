@@ -29,11 +29,11 @@ section.layout {
 }
 
 .router-link-active {
-    @apply bg-primary-100/25 text-primary-600
+    @apply bg-primary-100/50 text-primary-600
 }
 
 ::selection {
-    @apply bg-primary-100/25 text-primary-600
+    @apply bg-primary-100 text-primary-600
 }
 
 ::-webkit-scrollbar {

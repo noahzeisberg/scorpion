@@ -16,8 +16,8 @@ func main() {
 
 	err := wails.Run(&options.App{
 		Title:     "Scorpion",
-		Width:     1100,
-		Height:    600,
+		Width:     1000,
+		Height:    550,
 		Frameless: false,
 		AssetServer: &assetserver.Options{
 			Assets: assets,
@@ -30,7 +30,7 @@ func main() {
 		Windows: &windows.Options{
 			WebviewIsTransparent: true,
 			WindowIsTranslucent:  true,
-			BackdropType:         windows.Acrylic,
+			BackdropType:         windows.Tabbed,
 			Theme:                windows.Light,
 			DisableWindowIcon:    true,
 		},

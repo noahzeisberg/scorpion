@@ -1,9 +1,9 @@
 <template>
-  <RouterLink v-if="type === 'router'" class="flex items-center font-bold flex-row gap-2 px-6 py-2 rounded-lg hover:bg-primary-100/25 hover:text-primary-600 duration-150 ease-in-out" :to="target">
+  <RouterLink v-if="type === 'router'" class="flex items-center font-bold flex-row gap-2 p-2.5 rounded-lg hover:bg-primary-100/50 hover:text-primary-600 duration-150 ease-in-out" :to="target">
     <slot></slot>
   </RouterLink>
 
-  <a v-else-if="type === 'browser'" @click="BrowserOpenURL(target)" class="flex items-center font-bold flex-row gap-2 px-6 py-2 rounded-lg hover:bg-primary-100/25 hover:text-primary-600 duration-150 ease-in-out" href="#">
+  <a v-else-if="type === 'browser'" @click="BrowserOpenURL(target)" class="flex items-center font-bold flex-row gap-2 p-2.5 rounded-lg hover:bg-primary-100/50 hover:text-primary-600 duration-150 ease-in-out" href="#">
     <slot></slot>
   </a>
 </template>

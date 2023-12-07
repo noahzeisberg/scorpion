@@ -35,7 +35,6 @@ type App struct {
 
 type ScorpionSettings struct {
 	Transparency bool `json:"transparency"`
-	DisplayCards bool `json:"display_cards"`
 }
 
 // NewApp creates a new App application struct
